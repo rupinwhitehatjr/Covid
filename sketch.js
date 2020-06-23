@@ -111,7 +111,6 @@ function draw(){
       fill("black");
       textSize(40);
       text("Score: "+count,windowWidth*3/4-50, windowHeight/8);
-      //text("Lives: "+heart,(windowWidth/4)-100, windowHeight/8);
 
       if (gameState === START){
         background(startImg);
@@ -124,7 +123,7 @@ function draw(){
         text("1.AVOID THE COVIDS IN YOUR PATH", windowWidth/2-250, windowHeight*4/5+50);
         text("2.COLLECT MASKS, SANITISERS, FOOD AND GLOVES FOR EXTRA LIVES", windowWidth/2-550, windowHeight*4/5+100);
         text("BEST OF LUCK CORONA WARRIOR", windowWidth/2-250, windowHeight*4/5+150);
-        if (mousePressedOver(button)||(touches[0]===windowWidth/2 && touches[1]===windowHeight/2)){
+        if (mousePressedOver(button)||touches.length>0){
           gameState= REST;
           touches=[];
       }
@@ -150,11 +149,7 @@ function draw(){
         boyStand.visible= false; 
         count += Math.round(World.frameRate/60);
         ground.velocityX = -(6 + 3*count/100);
-
-        //boy.debug= true;
         boy.setCollider("rectangle",0,0,10,400);
-
-        //boy.addAnimation("boy",runningBoy);
 
         pause.visible= true;
   
@@ -162,9 +157,7 @@ function draw(){
           ground.x = ground.width/2;
         }
 
-        //console.log(boy.y);
-
-        if (mousePressedOver(pause)||(touches[0]===windowWidth-100 && touches[1]===100)){
+        if (mousePressedOver(pause)||((touches[0]>windowWidth-150 &&touches[0]>windowWidth-50) && (touches[1]>50&&touches[1]<150))){
           gameState=PAUSE; 
           touches=[];
         }
@@ -191,19 +184,13 @@ function draw(){
 
         if (covid!==null){
         if (covid.isTouching(boy)){
-          //if (heart>0){
+          
             heart-=1;
             covid= null;
-            //console.log("heart");
-          //}
+            
         }
       }
 
-      /*for (var i=1; i<=heart; i++){
-        hearts= createSprite((windowWidth/4)-(i*100), windowHeight/8);
-        hearts.addImage("life",heartImg);
-        hearts.scale=0.4;
-      }*/
 
       if (heart==1){
         hearts1.visible= true;
@@ -229,7 +216,6 @@ function draw(){
         precaution.destroyEach();
         if (heart<3){
           heart+=1;
-          //console.log("prec");
         }
       }
     }
@@ -329,7 +315,7 @@ function draw(){
         bushGroup.destroyEach();
         benchGroup.destroyEach();
         cloudGroup.destroyEach();
-        if (mousePressedOver(restart)||(touches[0]===windowWidth/2 && touches[1]===windowHeight/2)){
+        if (mousePressedOver(restart)||touches.length>0){
           gameState=REST;
           restart.visible= false;
           heart=3;
@@ -340,7 +326,6 @@ function draw(){
       boy.collide(invisibleGround);
       
       drawSprites();
-      //console.log(windowWidth/20);
     }
 
     function spawnTree(){
