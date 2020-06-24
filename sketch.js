@@ -56,7 +56,7 @@ function setup(){
     restart.addImage("image", resetImg);
     restart.scale=0.6;
     restart.visible= false;
-    pause= createSprite(windowHeight-100, windowWidth-100, 50, 50);
+    pause= createSprite(windowWidth*9/10, windowHeight*4/5+200);
     pause.addImage("pause",pauseImg);
     pause.scale=0.5;
     pause.visible= false; 
@@ -75,13 +75,13 @@ function setup(){
     ground.y = ground.height /2;
     invisibleGround = createSprite(windowWidth/8-100,windowHeight/2,5,windowHeight*5);
     invisibleGround.visible = false;
-    hearts1= createSprite(windowWidth/10,windowHeight/5+100);
+    hearts1= createSprite(windowWidth*9/10,windowHeight/5+100);
     hearts1.addImage("life", heartImg);
     hearts1.scale= 0.4;
-    hearts2= createSprite(windowWidth/10,windowHeight/5);
+    hearts2= createSprite(windowWidth*9/10,windowHeight/5);
     hearts2.addImage("life", heartImg);
     hearts2.scale= 0.4;
-    hearts3= createSprite(windowWidth/10,windowHeight/5-100);
+    hearts3= createSprite(windowWidth*9/10,windowHeight/5-100);
     hearts3.addImage("life", heartImg);
     hearts3.scale= 0.4;
     ground.depth= boy.depth;
@@ -109,7 +109,7 @@ function draw(){
   hearts3.visible= false;
 
   push();
-  translate(windowWidth/8-100, windowHeight*4/5-100);
+  translate(windowWidth*9/10, windowHeight*4/5-100);
   fill("black");
   rotate(PI*28.5);
   textSize(40);
@@ -192,7 +192,7 @@ function draw(){
         }
         boy.visible=true;
         boyStand.visible= false; 
-        count += Math.round(World.frameRate/20);
+        count += Math.round(World.frameRate);
         ground.velocityY = -(6 + 3*count/100);
 
         //boy.debug= true; 
@@ -205,7 +205,7 @@ function draw(){
           ground.y = ground.height/2;
         }
 
-        if (mousePressedOver(pause)||((touches[0]>windowHeight-150 &&touches[0]<windowHeight-50) && (touches[1]>50&&touches[1]<150))){
+        if (mousePressedOver(pause)||((touches[0]>windowWidth*9/10-50 && touches[0]<windowWidth*9/10+50) && (touches[1]> windowHeight*4/5+100 && touches[1]> windowHeight*4/5+300))){
           gameState=PAUSE; 
           touches=[];
         }
