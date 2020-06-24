@@ -205,7 +205,7 @@ function draw(){
           ground.y = ground.height/2;
         }
 
-        if (mousePressedOver(pause)||((touches[0]>windowWidth*9/10-50 && touches[0]<windowWidth*9/10+50) && (touches[1]> windowHeight*4/5+100 && touches[1]> windowHeight*4/5+300))){
+        if (mousePressedOver(pause)||((touches[0]>windowWidth*9/10-50 && touches[0]<windowWidth*9/10+50) && (touches[1]> windowHeight*4/5+100 && touches[1]< windowHeight*4/5+300))){
           gameState=PAUSE; 
           touches=[];
         }
