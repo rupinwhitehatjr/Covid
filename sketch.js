@@ -40,14 +40,14 @@ function setup(){
      RESET=4;
      PAUSE=5; 
     gameState = START;
-    boy = createSprite(windowHeight/4, windowWidth*4/5-20,20,50);
+    boy = createSprite(windowHeight/4-100, windowWidth*4/5+100,20,50);
     boy.addAnimation("boy",runningBoy);
-    boy.scale= 0.5;
-    boyStand= createSprite(windowHeight/4, windowWidth*4/5-20,20,50);
+    boy.scale= 0.7;
+    boyStand= createSprite(windowHeight/4-100, windowWidth*4/5+100,20,50);
     boyStand.addImage("stand", boyStart);
     boyStand.scale=0.5;
     boyStand.visible= false; 
-    ground = createSprite(windowWidth/10,windowHeight/2,windowHeight*2,20);
+    ground = createSprite(windowWidth/10+100,windowHeight/2,windowHeight*2,20);
     ground.addImage(footpathImg);
     button= createSprite(windowHeight/2+50,windowWidth/2,10,10);
     button.addImage("start",startButton);
@@ -73,7 +73,7 @@ function setup(){
     home.scale= 0.5;
     home.visible= false;
     ground.y = ground.height /2;
-    invisibleGround = createSprite(windowWidth/9-10,windowHeight/2,5,windowHeight*5);
+    invisibleGround = createSprite(windowWidth/8-100,windowHeight/2,5,windowHeight*5);
     invisibleGround.visible = false;
     hearts1= createSprite(windowHeight*4/5+100, windowWidth/8-100);
     hearts1.addImage("life", heartImg);
@@ -195,7 +195,7 @@ function draw(){
         count += Math.round(World.frameRate/20);
         ground.velocityY = -(6 + 3*count/100);
 
-        boy.debug= true; 
+        //boy.debug= true; 
         boy.setCollider("rectangle",0,0,400,10);
 
 
@@ -401,7 +401,7 @@ function draw(){
 
     function spawnTree(){
       if (frameCount%100===0){
-      tree= createSprite(windowWidth/8+200,windowHeight+800,40,80);
+      tree= createSprite(windowWidth/8+200,windowHeight+1500,40,80);
       tree.addImage("tree",treeImg);
       tree.scale=0.7;
       tree.depth= boy.depth;
@@ -415,7 +415,7 @@ function draw(){
 
     function spawnBench(){
       if (frameCount%120===0){
-        bench=createSprite(windowWidth/8+80,windowHeight+700,40,80);
+        bench=createSprite(windowWidth/8+80,windowHeight+1000,40,80);
         bench.addImage("bench",benchImg);
         bench.scale=0.4;
         bench.depth= boy.depth;
@@ -444,7 +444,7 @@ function draw(){
     function spawnClouds(){
       if (frameCount%60===0){
         rand2= Math.round(random(0, 50));
-        var cloud= createSprite(windowHeight*3/4+rand2, windowWidth+300, 50, 50);
+        var cloud= createSprite(windowWidth*3/4+rand2, windowWidth+1300, 50, 50);
         cloud.addImage("cloud", cloudImg);
         cloud.scale=0.5;
         cloud.depth= hearts1.depth;
@@ -463,7 +463,7 @@ function draw(){
 
     function spawnObstacles() {
       if(frameCount % 60 === 0){
-        covid = createSprite(windowWidth/9+40,windowWidth+20,10,40);
+        covid = createSprite(windowWidth/9+140,windowWidth+1000,10,40);
         covid.addImage("covid19", covidImg);
         covid.scale= 0.3;
         covid.velocityY = - (6 + 3*count/100);
@@ -475,7 +475,7 @@ function draw(){
       function mask(){
         if (frameCount%60===0){
           rand= Math.round(random(1,4));
-          prec= createSprite(windowHeight/5+250, windowWidth+600, 20, 20);
+          prec= createSprite(windowHeight/5+250, windowWidth+900, 20, 20);
           if (rand==1){
             prec.addImage("precaution3",prec1);
           }
