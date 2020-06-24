@@ -49,7 +49,7 @@ function setup(){
     boyStand.visible= false; 
     ground = createSprite(windowWidth/10+50,windowHeight/2+200);
     ground.addImage(footpathImg);
-    button= createSprite(windowWidth/2,windowHeight/2,10,10);
+    button= createSprite(windowWidth/2+50,windowHeight/2,10,10);
     button.addImage("start",startButton);
     button.visible= false;
     restart= createSprite(windowHeight/2-10, windowWidth/2+100, 50, 50);
@@ -154,7 +154,7 @@ function draw(){
       pop();
 
       push();
-      translate( windowWidth/2-300, windowWidth/2-200);
+      translate( windowWidth/2-300, windowWidth/2-100);
       fill("red");
       rotate(PI*28.5);
       textSize(30);
