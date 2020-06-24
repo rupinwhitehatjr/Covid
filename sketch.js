@@ -47,7 +47,7 @@ function setup(){
     boyStand.addImage("stand", boyStart);
     boyStand.scale=0.7;
     boyStand.visible= false; 
-    ground = createSprite(windowWidth/10+100,windowHeight/2,windowHeight*2,20);
+    ground = createSprite(windowWidth/10+100,windowHeight/2+100);
     ground.addImage(footpathImg);
     button= createSprite(windowHeight/2+50,windowWidth/2,10,10);
     button.addImage("start",startButton);
@@ -401,7 +401,7 @@ function draw(){
 
     function spawnTree(){
       if (frameCount%160===0){
-      tree= createSprite(windowWidth/8+250,windowHeight+1500,40,80);
+      tree= createSprite(windowWidth/8+350,windowHeight+1500,40,80);
       tree.addImage("tree",treeImg);
       tree.scale=0.7;
       tree.depth= boy.depth;
@@ -415,7 +415,7 @@ function draw(){
 
     function spawnBench(){
       if (frameCount%200===0){
-        bench=createSprite(windowWidth/8+190,windowHeight+1000,40,80);
+        bench=createSprite(windowWidth/8+250,windowHeight+1000,40,80);
         bench.addImage("bench",benchImg);
         bench.scale=0.4;
         bench.depth= boy.depth;
@@ -429,7 +429,7 @@ function draw(){
 
     function spawnBush(){
       if (frameCount%100===0){
-        bush=createSprite(windowWidth/8+150,windowHeight+900,40,80);
+        bush=createSprite(windowWidth/8+200,windowHeight+900,40,80);
         bush.addImage("bush", bushImg);
         bush.scale=0.4;
         bush.depth= boy.depth;
