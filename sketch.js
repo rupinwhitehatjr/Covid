@@ -196,7 +196,7 @@ function draw(){
         ground.velocityY = -(6 + 3*count/100);
 
         //boy.debug= true; 
-        boy.setCollider("rectangle",0,0,400,10);
+        boy.setCollider("rectangle",0,0,600,10);
 
 
         pause.visible= true;
@@ -400,8 +400,8 @@ function draw(){
     }
 
     function spawnTree(){
-      if (frameCount%100===0){
-      tree= createSprite(windowWidth/8+200,windowHeight+1500,40,80);
+      if (frameCount%160===0){
+      tree= createSprite(windowWidth/8+150,windowHeight+1500,40,80);
       tree.addImage("tree",treeImg);
       tree.scale=0.7;
       tree.depth= boy.depth;
@@ -414,8 +414,8 @@ function draw(){
     }
 
     function spawnBench(){
-      if (frameCount%120===0){
-        bench=createSprite(windowWidth/8+80,windowHeight+1000,40,80);
+      if (frameCount%200===0){
+        bench=createSprite(windowWidth/8+120,windowHeight+1000,40,80);
         bench.addImage("bench",benchImg);
         bench.scale=0.4;
         bench.depth= boy.depth;
@@ -429,7 +429,7 @@ function draw(){
 
     function spawnBush(){
       if (frameCount%100===0){
-        bush=createSprite(windowWidth/8+80,windowHeight+900,40,80);
+        bush=createSprite(windowWidth/8+100,windowHeight+900,40,80);
         bush.addImage("bush", bushImg);
         bush.scale=0.4;
         bush.depth= boy.depth;
@@ -442,9 +442,9 @@ function draw(){
     }
 
     function spawnClouds(){
-      if (frameCount%60===0){
+      if (frameCount%120===0){
         rand2= Math.round(random(0, 50));
-        var cloud= createSprite(windowWidth*3/4+rand2, windowWidth+1300, 50, 50);
+        var cloud= createSprite(windowWidth*2/3+rand2, windowWidth+1300, 50, 50);
         cloud.addImage("cloud", cloudImg);
         cloud.scale=0.5;
         cloud.depth= hearts1.depth;
@@ -462,7 +462,7 @@ function draw(){
     }
 
     function spawnObstacles() {
-      if(frameCount % 60 === 0){
+      if(frameCount % 120 === 0){
         covid = createSprite(windowWidth/9+140,windowWidth+1000,10,40);
         covid.addImage("covid19", covidImg);
         covid.scale= 0.3;
@@ -473,7 +473,7 @@ function draw(){
     }
   
       function mask(){
-        if (frameCount%60===0){
+        if (frameCount%200===0){
           rand= Math.round(random(1,4));
           prec= createSprite(windowHeight/5+250, windowWidth+900, 20, 20);
           if (rand==1){
