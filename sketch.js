@@ -45,7 +45,7 @@ function setup(){
     boy.scale= 0.7;
     boyStand= createSprite(windowHeight/4-100, windowWidth*4/5+100,20,50);
     boyStand.addImage("stand", boyStart);
-    boyStand.scale=0.5;
+    boyStand.scale=0.7;
     boyStand.visible= false; 
     ground = createSprite(windowWidth/10+100,windowHeight/2,windowHeight*2,20);
     ground.addImage(footpathImg);
@@ -196,7 +196,7 @@ function draw(){
         ground.velocityY = -(6 + 3*count/100);
 
         //boy.debug= true; 
-        boy.setCollider("rectangle",0,0,600,10);
+        boy.setCollider("rectangle",0,0,800,10);
 
 
         pause.visible= true;
@@ -401,7 +401,7 @@ function draw(){
 
     function spawnTree(){
       if (frameCount%160===0){
-      tree= createSprite(windowWidth/8+150,windowHeight+1500,40,80);
+      tree= createSprite(windowWidth/8+250,windowHeight+1500,40,80);
       tree.addImage("tree",treeImg);
       tree.scale=0.7;
       tree.depth= boy.depth;
@@ -415,7 +415,7 @@ function draw(){
 
     function spawnBench(){
       if (frameCount%200===0){
-        bench=createSprite(windowWidth/8+120,windowHeight+1000,40,80);
+        bench=createSprite(windowWidth/8+190,windowHeight+1000,40,80);
         bench.addImage("bench",benchImg);
         bench.scale=0.4;
         bench.depth= boy.depth;
@@ -429,7 +429,7 @@ function draw(){
 
     function spawnBush(){
       if (frameCount%100===0){
-        bush=createSprite(windowWidth/8+100,windowHeight+900,40,80);
+        bush=createSprite(windowWidth/8+150,windowHeight+900,40,80);
         bush.addImage("bush", bushImg);
         bush.scale=0.4;
         bush.depth= boy.depth;
