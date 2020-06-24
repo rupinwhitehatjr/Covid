@@ -32,7 +32,7 @@ function preload(){
 }
 
 function setup(){
-   createCanvas(windowHeight , windowWidth);
+   createCanvas(windowWidth , windowHeight);
      PLAY = 1;
      END = 0;
      START= 2;
@@ -192,7 +192,7 @@ function draw(){
         }
         boy.visible=true;
         boyStand.visible= false; 
-        count += Math.round(World.frameRate/60);
+        count += Math.round(World.frameRate/20);
         ground.velocityY = -(6 + 3*count/100);
 
         boy.debug= true; 
@@ -400,7 +400,7 @@ function draw(){
     }
 
     function spawnTree(){
-      if (frameCount%150===0){
+      if (frameCount%10===0){
       tree= createSprite(windowWidth/8+200,windowHeight+800,40,80);
       tree.addImage("tree",treeImg);
       tree.scale=0.7;
@@ -414,7 +414,7 @@ function draw(){
     }
 
     function spawnBench(){
-      if (frameCount%500===0){
+      if (frameCount%50===0){
         bench=createSprite(windowWidth/8+80,windowHeight+700,40,80);
         bench.addImage("bench",benchImg);
         bench.scale=0.4;
@@ -428,7 +428,7 @@ function draw(){
     }
 
     function spawnBush(){
-      if (frameCount%350===0){
+      if (frameCount%30===0){
         bush=createSprite(windowWidth/8+80,windowHeight+900,40,80);
         bush.addImage("bush", bushImg);
         bush.scale=0.4;
@@ -442,7 +442,7 @@ function draw(){
     }
 
     function spawnClouds(){
-      if (frameCount%120===0){
+      if (frameCount%10===0){
         rand2= Math.round(random(0, 50));
         var cloud= createSprite(windowHeight*3/4+rand2, windowWidth+300, 50, 50);
         cloud.addImage("cloud", cloudImg);
@@ -462,7 +462,7 @@ function draw(){
     }
 
     function spawnObstacles() {
-      if(frameCount % (windowHeight/10) === 0){
+      if(frameCount % 10 === 0){
         covid = createSprite(windowWidth/9+40,windowWidth+20,10,40);
         covid.addImage("covid19", covidImg);
         covid.scale= 0.3;
@@ -473,7 +473,7 @@ function draw(){
     }
   
       function mask(){
-        if (frameCount%(windowHeight/10)===0){
+        if (frameCount%10===0){
           rand= Math.round(random(1,4));
           prec= createSprite(windowHeight/5+250, windowWidth+600, 20, 20);
           if (rand==1){
