@@ -47,7 +47,7 @@ function setup(){
     boyStand.addImage("stand", boyStart);
     boyStand.scale=0.7;
     boyStand.visible= false; 
-    ground = createSprite(windowWidth/10-100,windowHeight/2+100);
+    ground = createSprite(windowWidth/10+100,windowHeight/2+100);
     ground.addImage(footpathImg);
     button= createSprite(windowHeight/2+50,windowWidth/2,10,10);
     button.addImage("start",startButton);
