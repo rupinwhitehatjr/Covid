@@ -75,13 +75,13 @@ function setup(){
     ground.y = ground.height /2;
     invisibleGround = createSprite(windowWidth/8-100,windowHeight/2,5,windowHeight*5);
     invisibleGround.visible = false;
-    hearts1= createSprite(window*9/10,windowHeight/5+100);
+    hearts1= createSprite(windowWidth*9/10,windowHeight/5+100);
     hearts1.addImage("life", heartImg);
     hearts1.scale= 0.4;
-    hearts2= createSprite(window*9/10,windowHeight/5);
+    hearts2= createSprite(windowWidth*9/10,windowHeight/5);
     hearts2.addImage("life", heartImg);
     hearts2.scale= 0.4;
-    hearts3= createSprite(window*9/10,windowHeight/5-100);
+    hearts3= createSprite(windowWidth*9/10,windowHeight/5-100);
     hearts3.addImage("life", heartImg);
     hearts3.scale= 0.4;
     ground.depth= boy.depth;
@@ -109,7 +109,7 @@ function draw(){
   hearts3.visible= false;
 
   push();
-  translate(windowWidth/8-100, windowHeight*4/5-100);
+  translate(windowWidth*7/8-100, windowHeight*4/5-100);
   fill("black");
   rotate(PI*28.5);
   textSize(40);
