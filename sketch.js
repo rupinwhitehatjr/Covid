@@ -49,7 +49,7 @@ function setup(){
     boyStand.visible= false; 
     ground = createSprite(windowWidth/10+50,windowHeight/2+200);
     ground.addImage(footpathImg);
-    button= createSprite(windowHeight/2+50,windowWidth/2,10,10);
+    button= createSprite(windowWidth/2+100,windowHeight/2,10,10);
     button.addImage("start",startButton);
     button.visible= false;
     restart= createSprite(windowHeight/2-10, windowWidth/2+100, 50, 50);
@@ -122,7 +122,7 @@ function draw(){
         button.visible=true; 
         hide();
       push();
-      translate(windowHeight/2-100, windowWidth/2-100);
+      translate(windowWidth/2-100, windowHeight/2-100);
       fill("red");
       rotate(PI*28.5);
       textSize(30);
@@ -130,7 +130,7 @@ function draw(){
       pop();
 
       push();
-      translate(windowHeight/2-150, windowWidth/2-250);
+      translate(windowWidth/2-150, windowHeight/2-250);
       fill("red");
       rotate(PI*28.5);
       textSize(30);
@@ -138,7 +138,7 @@ function draw(){
       pop();
 
       push();
-      translate( windowHeight/2-200, windowWidth/2-250);
+      translate( windowWidth/2-200, windowHeight/2-250);
       fill("red");
       rotate(PI*28.5);
       textSize(30);
@@ -146,7 +146,7 @@ function draw(){
       pop();
 
       push();
-      translate( windowHeight/2-250, windowWidth/2-200);
+      translate( windowWidtj/2-250, windowHeight/2-200);
       fill("red");
       rotate(PI*28.5);
       textSize(30);
@@ -154,7 +154,7 @@ function draw(){
       pop();
 
       push();
-      translate( windowHeight/2-300, windowWidth/2-200);
+      translate( windowWidth/2-300, windowWidth/2-200);
       fill("red");
       rotate(PI*28.5);
       textSize(30);
