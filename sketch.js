@@ -52,7 +52,7 @@ function setup(){
     button= createSprite(windowWidth/2+50,windowHeight/2,10,10);
     button.addImage("start",startButton);
     button.visible= false;
-    restart= createSprite(windowHeight/2-10, windowWidth/2+100, 50, 50);
+    restart= createSprite(windowWidth/2-10, windowHeight/2+100, 50, 50);
     restart.addImage("image", resetImg);
     restart.scale=0.6;
     restart.visible= false;
@@ -196,7 +196,7 @@ function draw(){
         ground.velocityY = -(6 + 3*count/100);
 
         //boy.debug= true; 
-        boy.setCollider("rectangle",0,0,800,10);
+        boy.setCollider("rectangle",0,0,600,10);
 
 
         pause.visible= true;
@@ -205,10 +205,10 @@ function draw(){
           ground.y = ground.height/2;
         }
 
-        if (mousePressedOver(pause)||((touches[0]>windowWidth*9/10-50 && touches[0]<windowWidth*9/10+50) && (touches[1]> windowHeight*4/5+100 && touches[1]< windowHeight*4/5+300))){
+        /*if (mousePressedOver(pause)||((touches[0]>windowWidth*9/10-100 && touches[0]<windowWidth*9/10+100) && (touches[1]> windowHeight*4/5+100 && touches[1]< windowHeight*4/5+300))){
           gameState=PAUSE; 
           touches=[];
-        }
+        }*/
          
         if(keyDown("space") ||touches.length>0 ){
           boy.velocityX= +10 ;
@@ -270,7 +270,7 @@ function draw(){
       }
     }
 
-    if (gameState==PAUSE){
+    /*if (gameState==PAUSE){
       background("black");
       pause.visible= false; 
       push();
@@ -321,7 +321,7 @@ function draw(){
       resume.visible=false;
       home.visible= false;
       }
-    }
+    }*/
       
       if(gameState === END) {
         bgSound.stop();
@@ -356,14 +356,14 @@ function draw(){
         pause.visible= false; 
         background(endImg);
         push();
-        translate(windowHeight/2+150, windowWidth/2+50);
+        translate(windowWidth/2+150, windowHeight/2+50);
         fill("black");
         textSize(18);
         rotate(PI*28.5);
         text("YOUR SCORE:"+count,0,0);
         pop();
         push();
-        translate(windowHeight/2+100,windowWidth/2+50);
+        translate(windowWidth/2+100,windowHeight/2+50);
         fill("black");
         textSize(18);
         rotate(PI*28.5);
@@ -371,7 +371,7 @@ function draw(){
         pop();
       
         push();
-        translate(windowHeight/2+50,windowWidth/2);
+        translate(windowWidth/2+50,windowHeight/2);
         fill("black");
         rotate(PI*28.5);
         textSize(30);
