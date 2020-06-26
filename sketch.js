@@ -152,14 +152,6 @@ function draw(){
       textSize(30);
       text("AND GLOVES FOR EXTRA LIVES",0,0);
       pop();
-
-      push();
-      translate( windowWidth/2-300, windowWidth/2-100);
-      fill("red");
-      rotate(PI*28.5);
-      textSize(30);
-      text("BEST OF LUCK CORONA WARRIOR",0,0);
-      pop();
         
         //fill("red");
         //text("LETS BEAT COVID",windowHeight/2-125, windowWidth/2-200);
